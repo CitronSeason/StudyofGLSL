@@ -13,5 +13,6 @@ void main(){
     vec2 pos = gl_FragCoord.xy / u_resolution;
     pos.x *= 2.0;
     //int ind = int(pos.x);
-    vec3 col = mix(col4[0], col4[1], pos.x),
+    vec3 col = mix( mix(col4[0], col4[1], pos.x), mix(col4[2], col4[3], pos.x), pos.y);
+    fragColor = vec4(col, 1.0);
 }
